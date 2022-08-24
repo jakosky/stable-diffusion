@@ -2,6 +2,7 @@ import argparse, os, sys, glob
 import cv2
 import torch
 import numpy as np
+import random
 from omegaconf import OmegaConf
 from PIL import Image
 from tqdm import tqdm, trange
@@ -216,7 +217,7 @@ def main():
     parser.add_argument(
         "--seed",
         type=int,
-        default=42,
+        default=random.randint(0,4294967295),
         help="the seed (for reproducible sampling)",
     )
     parser.add_argument(
